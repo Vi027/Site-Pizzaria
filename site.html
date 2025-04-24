@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A melhor pizzaria de Fortaleza, Pizzaria, Site Profissional de Pizzaria">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+        background-color: white;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .container-icon {
+        flex: 30%;
+        font-family: 'Lobster', cursive;
+        color: #e57c20;
+        font-size: 40px;
+        text-align: left;
+        padding-left: 5%;
+    }
+
+    .menu {
+        flex: 70%;
+        text-align: right;
+        padding-right: 5%;
+    }
+
+    .menu-item {
+        color: #e57c20;
+        font-size: 18px;
+        padding: 20px 25px;
+        font-weight: 500;
+    }
+
+    .menu-item:hover {
+        color: #bb2214;
+        border-top: 3px solid #bb2214;
+    }
+
+    #botao-contact {
+        background-color: #e57c20;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-left: 5%;
+    }
+
+    #botao-contact:hover {
+        background-color: #bb2214;
+        transition: 0.4s;
+        border: none;
+    }
+
+    .conteudo {
+        display: flex;
+        flex-flow: row wrap;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        padding-top: 120px;
+        margin-bottom: 30px;
+    }
+
+    .conteudo-texto {
+        margin-left: 5%;
+        flex: 30%;
+        text-align: left;
+    }
+
+    .conteudo-texto strong {
+        color: #e57c20;
+    }
+
+    .conteudo-texto h2 {
+        font-weight: 900;
+        font-size: 70px;
+        color: #bb2214;
+        margin-bottom: 15px;
+    }
+
+    .conteudo-texto p {
+        color: #858585;
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    .botao-pedido {
+        display: inline-block;
+        background-color: #bb2214;
+        color: white;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+    .botao-pedido:hover {
+        background-color: #e57c20;
+        transition: 0.4s;
+        border: none;
+        transform: scale(1.1);
+    }
+
+    .conteudo-img {
+        margin-top: 100px;
+        flex: 60%;
+        text-align: right;
+        margin-right: 5%;
+    }
+
+    .conteudo-img img {
+        width: 700px;
+        max-width: 90%;
+    }
+
+    .conteudo-sobre {
+        flex: 45%;
+        margin-right: 5%;
+    }
+
+    .conteudo-img-sobre {
+        flex: 45%;
+        margin-left: 5%;
+    }
+
+    .conteudo-img-sobre img {
+        max-width: 90%;
+    }
+
+    .conteudo-sobre h2 {
+        font-size: 40px;
+        color: #e57c20;
+        border-left: 6px solid #bb2214;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .conteudo-sobre p {
+        font-size: 17px;
+        font-weight: 400;
+        color: #858585;
+        margin-bottom: 15px;
+    }
+
+    .conteudo-pizzas {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .conteudo-pizzas h2 {
+        color: #e57c20;
+        border-left: 6px solid #bb2214;
+        font-size: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 30px;   
+        margin-top: 8px;
+    }
+
+    .conteudo-pizzas img {
+        width: 100%;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .pizza-info {
+        display: inline-block;
+        background-color: white;
+        margin: 10px 15px;
+        width: 320px;
+        height: auto;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .pizza-info:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+        cursor: pointer;
+    }
+
+    .pizza-info h3 {
+        color: #e57c20;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .pizza-info p {
+        word-wrap: break-word;
+        color: #858585;
+        margin-bottom: 10px;
+    }
+
+    #preco1 , #preco2 , #preco3 , #preco4 {
+        color: #bb2214;
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .form-contato {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    .form-contato input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .form-contato button {
+        background-color: #e57c20;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .form-contato button:hover {
+        background-color: #bb2214;
+        transition: 0.3s;
+    }
+
+    .rodape {
+        margin-top: 100px;
+        padding: 50px;
+        text-align: center;
+        font-weight: 500;
+        color: #858585;
+    }
+    </style>
+    <title>SaborArte Pizzaria</title>
+</head>
+<body>
+    <header class="container">
+        <h1 class="container-icon">SaborArte Pizza</h1>
+        <nav class="menu">
+            <a href="#conteudo-home" class="menu-item">Home</a>
+            <a href="#conteudo-sobre" class="menu-item">Sobre</a>
+            <a href="#conteudo-menu" class="menu-item">Menu</a>
+            <a href="#conteudo-contato" id="botao-contact" class="menu-item">Contato</a>
+        </nav>
+    </header>
+    <main class="conteudo" id="conteudo-home">     
+        <section class="conteudo-texto">
+            <h2><strong>Bem vindo</strong> a melhor pizzaria da cidade</h2>
+            <p>No mercado desde 1990, utilizando os melhores ingredientes com profissionais competentes para trazer muita felicidade para todas as famílias.</p>
+            <a href="#" class="botao-pedido">Faça já seu pedido</a>
+        </section>
+        <section class="conteudo-img">
+            <img src="img/home.png" alt="Imagem principal de pizzas">
+        </section>
+
+        <section class="conteudo-img-sobre" id="conteudo-sobre">
+            <img src="img/about.png" alt="Imagem de uma Pizza">
+        </section>
+        <section class="conteudo-sobre">
+            <h2>Sobre</h2>
+            <p>Nossa história começou em Colombo-PR, movida por um sonho: criar um espaço onde o sabor, o carinho e a tradição se encontrassem em cada fatia. 
+                Com receitas artesanais, ingredientes frescos e um atendimento acolhedor, conquistamos o paladar e o coração dos nossos clientes.
+            </p>
+            <a href="#" class="botao-pedido">Conheça nossa pizzaria</a>
+        </section>
+        <section class="conteudo-pizzas" id="conteudo-menu">
+            <h2>Pizzas que mais fazem sucesso</h2>
+            <div class="pizza-info">
+                <img src="img/pizza1.jpg" alt="Margarita">
+                <h3>Margarita</h3>
+                <p>Molho de tomate, mussarela, manjericão fresco e azeite.</p>
+                <p id="preco1">R$ 17.00</p>
+            </div>
+            <div class="pizza-info">
+                <img src="img/pizza2.jpg" alt="Portuguesa">
+                <h3>Portuguesa</h3>
+                <p>Mussarela, presunto, ovos, cebola, ervilha e azeitonas.</p>
+                <p id="preco2">R$ 17.00</p>
+            </div>
+            <div class="pizza-info">
+                <img src="img/pizza3.jpg" alt="Calabresa">
+                <h3>Calabresa</h3>
+                <p>Mussarela, calabresa fatiada, cebola e orégano.</p>
+                <p id="preco3">R$ 17.00</p>
+            </div>
+        </section>
+        <section id="conteudo-contato" class="conteudo">
+            <div class="conteudo-sobre">
+                <h2>Fale com a gente</h2>
+                <p>Preencha os campos abaixo para entrar em contato:</p>
+                <form class="form-contato">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="tel" placeholder="Telefone" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="text" placeholder="CEP">
+                    <input type="text" placeholder="Rua">
+                    <input type="text" placeholder="Número">
+                    <input type="text" placeholder="Bairro">
+                    <input type="text" placeholder="Complemento">
+                    <button type="submit" class="botao-pedido">Enviar</button> 
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        Copyright 2023 © - SaborArte Pizza
+    </footer>
+</body>
+</html>
